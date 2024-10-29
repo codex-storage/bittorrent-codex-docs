@@ -1,8 +1,15 @@
 ---
 tags:
   - bittorrent
+  - "#obsidian"
+  - "#notion"
+source: https://github.com/marcinczenko/bittorrent-codex-docs
 ---
-#bittorrent 
+#bittorrent #obsidian #notion 
+
+| source | https://github.com/marcinczenko/bittorrent-codex-docs |
+| ------ | ----------------------------------------------------- |
+
 ## BitTorrent/Codex Integration
 
 In this repository your will find a complete documentation of our BitTorrent/Codex investigation.
