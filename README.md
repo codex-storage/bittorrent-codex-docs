@@ -2,6 +2,7 @@
 tags:
   - bittorrent
 ---
+#bittorrent 
 ## BitTorrent/Codex Integration
 
 In this repository your will find a complete documentation of our BitTorrent/Codex investigation.
@@ -30,5 +31,6 @@ The vault includes the `.obsidian` folder, but does not include publishing setti
 
 ### Published site
 
-For the duration of the project, I am also publishing the documentation at [https://publish.obsidian.md/bittorrent](https://publish.obsidian.md/bittorrent).
-This will be removed after conclusion has been reached.
+For the duration of the project, I am also publishing the documentation at [https://publish.obsidian.md/bittorrent](https://publish.obsidian.md/bittorrent). Published site allows you to access all the docs, but it is highly recommended to use [Obsidian App](https://obsidian.md/download) for a complete experience. Currently, for instance, we need to duplicate note properties in a table, in order for those to be visible at the published site.
+
+The site will be removed after conclusion has been reached.

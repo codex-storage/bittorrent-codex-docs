@@ -2,7 +2,7 @@
 tags:
   - bittorrent
 ---
-Deluge is a [[Learn BitTorrent]] client.
+Deluge is a [[Learn BitTorrent|BitTorrent]] client.
 
 Official link: https://deluge-torrent.org.
 Git: https://git.deluge-torrent.org/deluge (they are not on GitHub!)

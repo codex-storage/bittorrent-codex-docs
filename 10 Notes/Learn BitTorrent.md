@@ -4,7 +4,15 @@ tags:
 urls:
   - https://www.bittorrent.org
   - https://www.bittorrent.com
+related-to:
+  - "[[Comparison of BitTorrent clients]]"
 ---
+#bittorrent 
+
+| urls       | https://www.bittorrent.org, https://www.bittorrent.com |
+| ---------- | ------------------------------------------------------ |
+| relates-to | [[Comparison of BitTorrent clients]]                   |
+
 In order to imagine, what do we mean by *BitTorrent - Codex Integration*, we need to gain some basic understanding of BitTorrent. This is no time nor space to create a comprehensive introduction to BitTorrent here (we need to learn it as we go), so, here I just gathered some resources I use to understand the protocol, and by doing it to understand what does it mean for Codex to integrate with BitTorrent clients.
 
 ### Specs
