@@ -1,0 +1,66 @@
+.workspace-leaf-content[data-type="markdown"] .internal-query .nav-header {
+  margin-top: 0; /* works around issues with minimal theme */
+}
+
+.workspace-leaf-content[data-type="markdown"] .internal-query .nav-header .nav-buttons-container {
+  position: unset; /* works around issues with minimal theme */
+  justify-content: center; /* works around issues with minimal theme */
+}
+
+.workspace-leaf-content[data-type="markdown"] .internal-query .is-hidden {
+  display: none;
+}
+
+.search-results-children.is-rendered .search-result-file-match {
+  white-space: normal;
+}
+
+.search-results-children.is-rendered {
+  padding: 0;
+}
+
+.search-results-children.is-rendered .search-result-file-matches .markdown-preview-view {
+  padding: 0;
+}
+
+.search-results-children.is-rendered .search-result-file-matches .markdown-preview-section {
+  max-width: 100%;
+}
+
+.search-results-children.is-rendered .task-list-item-checkbox {
+  vertical-align: unset;
+}
+
+.search-results-children.is-rendered ul {
+  padding-inline-start: 40px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.cm-preview-code-block.is-rendered .markdown-preview-view {
+  height: inherit;
+}
+
+.query-control-sort-tooltip {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.query-control-sort-option {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.query-control-sort-option:hover {
+  background: #555;
+}
+
+.query-control-sort-option-checkmark {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 1em;
+}

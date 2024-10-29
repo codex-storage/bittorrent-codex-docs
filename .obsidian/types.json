@@ -1,0 +1,13 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "url": "multitext",
+    "author": "text",
+    "finished": "checkbox",
+    "finished-date": "text",
+    "related-to": "multitext",
+    "authors": "multitext"
+  }
+}
