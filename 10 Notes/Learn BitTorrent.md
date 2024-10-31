@@ -20,9 +20,10 @@ In order to imagine, what do we mean by *BitTorrent - Codex Integration*, we nee
 BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Proposals (BEPs)](http://bittorrent.org/beps/bep_0000.html). Each BEP adds something to the BitTorrent Protocol. The most important BEPs to study in order to get a good initial grip on the BitTorrent protocol are:
 
 - [BEP3 - The BitTorrent Protocol Specification](http://bittorrent.org/beps/bep_0003.html)
-- [BEP5 - DHT Protocol](http://bittorrent.org/beps/bep_0005.html)
+- [[BEP5 - DHT Protocol]]
 - [BEP9 - Extension for Peers to Send Metadata Files](http://bittorrent.org/beps/bep_0009.html)
-- [BEP10 -Extension Protocol](http://bittorrent.org/beps/bep_0010.html)
+- [BEP10 -Extension Protocol](http://bittorrent.org/beps/bep_0010.html), see also [extension protocol for bittorrent](https://www.rasterbar.com/products/libtorrent/extension_protocol.html)
+- [BEP11 - Peer Exchange (PEX)](http://bittorrent.org/beps/bep_0011.html)
 - [BEP23 - Tracker Returns Compact Peer Lists](http://bittorrent.org/beps/bep_0023.html)
 - [BEP29 - uTorrent transport protocol](http://bittorrent.org/beps/bep_0029.html)
 
@@ -30,8 +31,8 @@ BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Pr
 
 Selection of some more important BitTorrent papers:
 
-1. [[Incentives Build Robustness in BitTorrent]]
-2. [[The Bittorrent P2P File-Sharing System - Measurements And Analysis]]
+1. [[Incentives Build Robustness in BitTorrent]] - original "BitTorrent" paper by [[Bram Cohen]].
+2. [[The Bittorrent P2P File-Sharing System - Measurements And Analysis]] - Paper from the creators of the [[Tribler]] protocol.
 
 ### Books
 

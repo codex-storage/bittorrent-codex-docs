@@ -1,8 +1,8 @@
 ---
 tags:
   - bittorrent
-  - "#obsidian"
-  - "#notion"
+  - obsidian
+  - notion
 source: https://github.com/marcinczenko/bittorrent-codex-docs
 ---
 #bittorrent #obsidian #notion 
@@ -18,7 +18,7 @@ In this repository your will find a complete documentation of our BitTorrent/Cod
 
 I was trying to answer the following questions:
 
-1. [[How BitTorrent/Codex integration may look like? ]]
+1. [[How BitTorrent-Codex integration may look like? ]]
 2. [[What are existing (open source) BitTorrent clients?]]
 3. [[What are the challenges ahead and how big the effort would be?]]
 
@@ -26,8 +26,8 @@ Answering those three questions should give us answer to the big ultimate questi
 
 Getting there in short time is not easy, especially without recent hands-on experience with the BitTorrent protocol. Thus in this quest, the following actions are being taken:
 
-1. Identity [[Learn BitTorrent | the best resources to learn BitTorrent protocol]], to get some intuition about the protocol. This is mostly to answer the question number (1) above.
-2. [[Comparison of BitTorrent clients | Compare existing BitTorrent clients]], trying to focus on those that are open sourced. We want to learn about their market share, how do they look and feel, and how easy would it be to work with their codebase.
+1. Identity [[Learn BitTorrent|the best resources to learn BitTorrent protocol]], to get some intuition about the protocol. This is mostly to answer the question number (1) above.
+2. [[Comparison of BitTorrent clients|Compare existing BitTorrent clients]], trying to focus on those that are open sourced. We want to learn about their market share, how do they look and feel, and how easy would it be to work with their codebase.
 3. Chose one of the client, and try to cat it through and learn how easy is to do what we think we want to do. What are the obstacles, and unexpected difficulties? This is the major part of our investigation.
 
 ### Obsidian

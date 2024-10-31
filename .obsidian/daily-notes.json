@@ -1,5 +1,5 @@
 {
   "format": "YYYY-MM-DD, ddd",
   "folder": "00 Planner/01 Days",
-  "autorun": true
+  "autorun": false
 }
