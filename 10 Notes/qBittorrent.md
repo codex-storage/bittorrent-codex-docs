@@ -26,6 +26,8 @@ Note about macOS support:
 
 I am not sure if that information is completely up-to-date. I did not test building the client on macOS, yet, there seem to be instructions available: [Compilation macOS (x86_64, arm64, cross compilation)](https://github.com/qbittorrent/qBittorrent/wiki/Compilation-macOS-(x86_64,-arm64,-cross-compilation)).
 
+This is the most advanced and comprehensive open source client and has similar user coverage as [[Transmission]].
+
 Languages:
 	
 ![[Pasted image 20241023155058.png]]
@@ -33,6 +35,23 @@ Languages:
 ### How does it look like?
 
 ![[qBittorrent-ubuntu.png]]
+
+#### Preferences
+
+- Connection
+  
+	![[Pasted image 20241107093730.png]]
+	
+- BitTorrent
+
+	![[Pasted image 20241107093241.png]]
+
+- Advanced
+  
+	![[Pasted image 20241107093434.png]]
+
+	See also [settings_pack](https://www.libtorrent.org/reference-Settings.html) and [Explanation of Options in qBittorrent](https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent#Advanced).
+
 
 ### Building
 
@@ -49,10 +68,11 @@ sudo apt install --no-install-recommends qtbase5-dev qttools5-dev libqt5svg5-dev
 Unfortunately, this did not work. When subsequently running:
 
 ```bash
-cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr/local
+$ cmake -G "Ninja" -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr/local
+$ cmake --build build
 ```
 
-I was getting the following error:
+I was getting the following error already with the first command above:
 
 ```bash
 CMake Error at cmake/Modules/CheckPackages.cmake:49 (find_package):
@@ -88,4 +108,8 @@ set(Qt6_DIR "~/Qt/6.8.0/gcc_64/lib/cmake/Qt6/")
 set(Qt6GuiTools_DIR "~/Qt/6.8.0/gcc_64/lib/cmake/Qt6GuiTools/")
 ```
 
-After that I was able to successfully compile the client.
+After that I was able to successfully compile the client. I skipped installation step:
+
+```bash
+$ sudo cmake --install build
+```

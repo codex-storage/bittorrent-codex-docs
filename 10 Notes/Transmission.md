@@ -8,12 +8,12 @@ related-to:
 
 #bittorrent 
 
-| link       | https://transmissionbt.com                 |
-| ---------- | ------------------------------------------- |
+| link       | https://transmissionbt.com                   |
+| ---------- | -------------------------------------------- |
 | source     | https://github.com/transmission/transmission |
-| related-to |                     |
+| related-to |                                              |
 
-[[Learn BitTorrent]] client. One of the three popular clients, the other are [[Deluge (BitTorrent)]] and [[qBittorrent]], with the most attractive looking website. Comparing to the other two, Transmission does not depend on [[libtorrent-rasterbar]], but rather has its own implementation of the BitTorrent protocol.
+[[Learn BitTorrent]] client. One of the three popular clients, the other are [[Deluge]] and [[qBittorrent]], with the most attractive looking website. Comparing to the other two, Transmission does not depend on [[libtorrent-rasterbar]], but rather has its own implementation of the BitTorrent protocol.
 
 > As noted in GitHub’s REDME, [Transmission's documentation](https://github.com/transmission/transmission/blob/main/docs/README.md) is currently out-of-date, but the team has recently begun a new project to update it and is looking for volunteers. If you're interested, please feel free to submit pull requests!
 
@@ -23,11 +23,26 @@ The latest release is from 30 May 2024.
 
 ### How does it look like?
 
-TBD...
+![[Pasted image 20241107085814.png]]
+or in light mode:
+
+![[Pasted image 20241107091409.png]]
+![[Pasted image 20241107092811.png]]
+
+Transmission does not seem to support version 2 torrent files and magnet links.
+
+#### Settings
+
+- Network
+	![[Pasted image 20241107094119.png]]
+- Peers
+		![[Pasted image 20241107094219.png]]
+Transmission has the most limited settings that are available to the user.
+There are also GTK and QT versions, which on a Mac look just terrible... (I did not yet check how they build and look on ubuntu).
 
 ### Building
 
-Some loose notes for now... TBD..
+Some loose notes for now... TBF...
 
 ```bash
 CMake Error in gtk/CMakeLists.txt:

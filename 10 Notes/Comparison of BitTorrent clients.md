@@ -4,14 +4,18 @@ tags:
 ---
 #bittorrent 
 
-On Wikipedia we can get a decent overview of [[Learn BitTorrent|BitTorrent]] clients: https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients.
-
-> It should be noted here, that Wikipedia sources are often quite outdated.
-
-From this comparative, it does feel appropriate to further constraint our research to the following three clients:
+Recall that we focus on the following three:
 
 - [[qBittorrent]]
 - [[Transmission]]
-- [[Deluge (BitTorrent)]]
+- [[Deluge]]
 
-All clients have similar capabilities and provide a similar set of features. Looking at look-and-feel of the website, Transmission looks the most attractive. If I would be a regular, non-dirty-hacker user, I would be attracted by [[Transmission]]. Other clients feel to me more niche, yet I would put [[qBitTorrent]] on the second position. [[Deluge (BitTorrent)]], still potentially attractive, with significantly lower user-base, being quite feature complete, still looks a bit ”hackie”. Both [[Deluge (BitTorrent)]] and [[qBittorrent]] depend on [[libtorrent-rasterbar]], while [[Transmission]] is using its own BitTorrent protocol implementation.
+Below a short summary.
+
+### Feature set
+
+- [[qBittorrent]] appears to be the most comprehensive. Has good support of BitTorrent version 2 features, supports magnet links (`v1`, `v2`, and `hybrid`) has good export capabilities, and provides access to an impressive set of options (both specific to qBittorrent and to [[libtorrent-rasterbar|libtorrent]]). It has the highest user base, looks reasonably good on Ubuntu. 
+- [[Transmission]] has best support on macos and looks really good there. Also provides versions based on QT and GTK. User-base similar to that of [[qBittorrent]]. Exposes limited number of settings, besides the most important protocol extensions. On the other hand, less options makes it less overwhelming for a regular user.
+- [[Deluge]] - Python-based client which the lowest user base (300k, comparing to around 6M for the other two clients). Feature-wise can be placed somewhere between [[qBittorrent]] and [[Transmission]]. Because it is Phyton, it may feel easier to work with it cross-platform. Yet, feels more buggy than the other two.
+
+Both [[Deluge]] and [[qBittorrent]] depend on [[libtorrent-rasterbar]], while [[Transmission]] is using its own BitTorrent protocol implementation.

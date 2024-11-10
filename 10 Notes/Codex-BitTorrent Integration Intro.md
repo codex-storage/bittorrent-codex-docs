@@ -3,7 +3,7 @@ tags:
   - bittorrent
 ---
 
-Let's gather some background data about [[Learn BitTorrent|BitTorrent]] clients. This is something that ChatGPT is quite good at so I compiled a bit of data you can easily check for yourself. If something looks funky, please feel free to adjust and clarify, but just for having quick check of where we are, it seems to be a reasonable overview. I also saw @Giuliano Mega immediately jumping into [[Deluge (BitTorrent)]] (also @Mark sees that as a good start), so for my personal conviction we are diving into the right thing I wanted to have some arguments on why - however short and imprecise it is not.
+Let's gather some background data about [[Learn BitTorrent|BitTorrent]] clients. This is something that ChatGPT is quite good at so I compiled a bit of data you can easily check for yourself. If something looks funky, please feel free to adjust and clarify, but just for having quick check of where we are, it seems to be a reasonable overview. I also saw @Giuliano Mega immediately jumping into [[Deluge]] (also @Mark sees that as a good start), so for my personal conviction we are diving into the right thing I wanted to have some arguments on why - however short and imprecise it is not.
 
 The most popular BitTorrent clients as of recent years include:
 
@@ -16,7 +16,7 @@ The most popular BitTorrent clients as of recent years include:
 3. **BitTorrent**
     1. The official client from BitTorrent Inc., it shares many similarities with µTorrent since the same company owns both.
     2. It’s user-friendly and offers both free and paid versions with additional features.
-4. **[[Deluge (BitTorrent)]]**
+4. **[[Deluge]]**
     1. An open-source client known for its extensive plugin support, making it highly customizable.
     2. It has a simple interface and is available for Windows, macOS, and Linux.
 5. **Transmission**
