@@ -42,7 +42,14 @@ There are also GTK and QT versions, which on a Mac look just terrible... (I did 
 
 ### Building
 
-Some loose notes for now... TBF...
+After cloning, building Transmission on macOS went smoothly. Only after adding `gtk` and `qt` dependencies started to brake the build.
+Their CMake configuration is quite clean, yet, once it detects GTK it goes through some "branches" even when they are not needed for the given build configuration. Thus if you installed GTK deps:
+
+```
+brew install gtk4 gtkmm4
+```
+
+You will start getting errors like this:
 
 ```bash
 CMake Error in gtk/CMakeLists.txt:
@@ -58,148 +65,50 @@ CMake Error in gtk/CMakeLists.txt:
 
   * The installation package was faulty and references files it does not
   provide.
-
-
-
-CMake Error in gtk/CMakeLists.txt:
-  Imported target "transmission::gtk_impl" includes non-existent path
-
-    "/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr/include/ffi"
-
-  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
-
-  * The path was deleted, renamed, or moved to another location.
-
-  * An install or uninstall procedure did not complete successfully.
-
-  * The installation package was faulty and references files it does not
-  provide.
-
-
-
--- Generating done (0.2s)
-CMake Generate step failed.  Build files cannot be regenerated correctly.
-~/code/open-source/bittorrent/transmission-mac-cmake(main)
-» brew uninstall gtk4 gtkmm4                                                                                        1 ↵
-Uninstalling /opt/homebrew/Cellar/gtk4/4.16.3... (598 files, 57.8MB)
-Uninstalling /opt/homebrew/Cellar/gtkmm4/4.16.0... (700 files, 9.7MB)
-==> Autoremoving 8 unneeded formulae:
-cairomm
-gdk-pixbuf
-glibmm
-graphene
-hicolor-icon-theme
-libepoxy
-libsigc++
-pangomm
-Uninstalling /opt/homebrew/Cellar/gdk-pixbuf/2.42.12... (152 files, 4.0MB)
-Uninstalling /opt/homebrew/Cellar/pangomm/2.54.0... (70 files, 755.8KB)
-Uninstalling /opt/homebrew/Cellar/graphene/1.10.8... (37 files, 1MB)
-Uninstalling /opt/homebrew/Cellar/hicolor-icon-theme/0.18... (8 files, 80.8KB)
-Uninstalling /opt/homebrew/Cellar/libepoxy/1.5.10... (11 files, 2.6MB)
-Uninstalling /opt/homebrew/Cellar/glibmm/2.82.0... (449 files, 6.4MB)
-Uninstalling /opt/homebrew/Cellar/cairomm/1.18.0... (43 files, 592.4KB)
-Uninstalling /opt/homebrew/Cellar/libsigc++/3.6.0... (52 files, 378.3KB)
-~/code/open-source/bittorrent/transmission-mac-cmake(main)
-» cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
--- Looking for clang-tidy
--- Looking for clang-tidy - not found
--- Configuring done (0.4s)
-CMake Error in gtk/CMakeLists.txt:
-  Imported target "transmission::gtk_impl" includes non-existent path
-
-    "/opt/homebrew/Cellar/gtkmm4/4.16.0/include/gtkmm-4.0"
-
-  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
-
-  * The path was deleted, renamed, or moved to another location.
-
-  * An install or uninstall procedure did not complete successfully.
-
-  * The installation package was faulty and references files it does not
-  provide.
-
-
-
-CMake Error in gtk/CMakeLists.txt:
-  Imported target "transmission::gtk_impl" includes non-existent path
-
-    "/opt/homebrew/Cellar/gtkmm4/4.16.0/include/gtkmm-4.0"
-
-  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
-
-  * The path was deleted, renamed, or moved to another location.
-
-  * An install or uninstall procedure did not complete successfully.
-
-  * The installation package was faulty and references files it does not
-  provide.
-
-
-
--- Generating done (0.2s)
-CMake Generate step failed.  Build files cannot be regenerated correctly.
-~/code/open-source/bittorrent/transmission-mac-cmake(main)
-» ninja clean                                                                                                       1 ↵
-ninja: error: loading 'build.ninja': No such file or directory
-~/code/open-source/bittorrent/transmission-mac-cmake(main)
-» rm -rf CMakeCache.txt CMakeFiles/                                                                                 1 ↵
-~/code/open-source/bittorrent/transmission-mac-cmake(main)
-» cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
--- Looking for clang-tidy
--- Looking for clang-tidy - not found
--- Configuring done (0.5s)
-CMake Error in gtk/CMakeLists.txt:
-  Imported target "transmission::gtk_impl" includes non-existent path
-
-    "/opt/homebrew/Cellar/gtkmm4/4.16.0/include/gtkmm-4.0"
-
-  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
-
-  * The path was deleted, renamed, or moved to another location.
-
-  * An install or uninstall procedure did not complete successfully.
-
-  * The installation package was faulty and references files it does not
-  provide.
-
-
-
-CMake Error in gtk/CMakeLists.txt:
-  Imported target "transmission::gtk_impl" includes non-existent path
-
-    "/opt/homebrew/Cellar/gtkmm4/4.16.0/include/gtkmm-4.0"
-
-  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
-
-  * The path was deleted, renamed, or moved to another location.
-
-  * An install or uninstall procedure did not complete successfully.
-
-  * The installation package was faulty and references files it does not
-  provide.
-
-
-
--- Generating done (0.2s)
-CMake Generate step failed.  Build files cannot be regenerated correctly.
 ```
 
-https://doc.qt.io/qt-6/macos.html#supported-versions
-https://github.com/fontforge/fontforge/discussions/5164
-https://github.com/fontforge/fontforge/issues/5153
-
-https://www.reddit.com/r/MacOS/comments/1fs551h/macos_15_sequoia_update_caused_include_errors_in_c/
+Well, the problem here is wrong macOS version. To fix the build, first check which macOS path is the correct one for your system:
 
 ```bash
 xcrun -sdk macosx --show-sdk-path
+```
+
+and then retrieve the paths currently included by running:
+
+```bash
 pkg-config --cflags gtkmm-4.0
 pkg-config --cflags gtk4
 ```
 
-`CMakeLists.txt` around line 361:
+Then in `CMakeLists.txt` manually add the combined paths returned by the `pkg-config` commands that you just run.
 
-```cmake
+In my case, I changed:
+
+```CMake
+if(GTK_FOUND)
+    add_library(transmission::gtk_impl INTERFACE IMPORTED)
+
+    target_compile_options(transmission::gtk_impl
+        INTERFACE
+            ${GTK${GTK_VERSION}_CFLAGS_OTHER})
+
+    target_include_directories(transmission::gtk_impl
+        INTERFACE
+            ${GTK${GTK_VERSION}_INCLUDE_DIRS})
+
+    target_link_directories(transmission::gtk_impl
+        INTERFACE
+            ${GTK${GTK_VERSION}_LIBRARY_DIRS})
+
+    target_link_libraries(transmission::gtk_impl
+        INTERFACE
+            ${GTK${GTK_VERSION}_LIBRARIES})
+endif()
+```
+
+to:
+
+```CMake
 if(GTK_FOUND)
     add_library(transmission::gtk_impl INTERFACE IMPORTED)
 
@@ -253,8 +162,8 @@ if(GTK_FOUND)
             /opt/homebrew/Cellar/cairomm/1.18.0/lib/cairomm-1.16/include 
             /opt/homebrew/Cellar/libsigc++/3.6.0/include/sigc++-3.0 
             /opt/homebrew/Cellar/libsigc++/3.6.0/lib/sigc++-3.0/include 
-            /opt/homebrew/Cellar/gtk4/4.16.3/include/gtk-4.0/unix-print)
-            # ${GTK${GTK_VERSION}_INCLUDE_DIRS})
+            /opt/homebrew/Cellar/gtk4/4.16.3/include/gtk-4.0/unix-print
+    )
 
     target_link_directories(transmission::gtk_impl
         INTERFACE
@@ -265,3 +174,13 @@ if(GTK_FOUND)
             ${GTK${GTK_VERSION}_LIBRARIES})
 endif()
 ```
+
+Just make sure, you use the path returned by `pkg-config` commands on your machine. Above, is just example.
+
+Remember that after you install GTK dependencies also the QT and native macOS builds will fail if you do not apply the above fix. You can also just remove `gtk4` and  `gtkmm4`:
+
+```bash
+brew uninstall gtk4 gtkmm4 
+```
+
+and then use native Xcode project or CMake for macOS.
