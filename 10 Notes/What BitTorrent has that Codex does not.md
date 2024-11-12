@@ -17,7 +17,7 @@ All have the following options (all can be enabled or disabled):
 - Local Peer Discovery
 - Encryption
 
-Additionally, Deluge lists here:
+Additionally, outside of the BitTorrent protocol itself:
 
 - NAT PMP (Port Mapping Protocol),
 - UPnP (Universal Plug and Play),
@@ -40,13 +40,24 @@ See [BEP11 - Peer Exchange (PEX)](https://www.bittorrent.org/beps/bep_0011.html)
 
 Another addition to the BitTorrent protocol that Codex does not seem to have. Local Service Discovery (LSD) or Local Peer Discovery as it is named by sometimes, provides a SSDP-like (http over udp-multicast) mechanism to announce the presence in specific swarms to local neighbours. See [BEP14 - Local Service Discovery](https://www.bittorrent.org/beps/bep_0014.html).
 
-In a way, it is related to NAT PMP.
-
-### NAT PMP (Port Mapping Protocol)
+### NAT PMP (Port Mapping Protocol) and Universal Plug and Play (UPnP)
 
 NAT Port Mapping Protocol (NAT-PMP) is a network protocol for establishing network address translation (NAT) settings and port forwarding configurations automatically without user effort.
 
-I do not believe we implement support that in our clients. Do we?
+Clients refer to this feature as *Port Mapping*  ([[qBittorrent]]) or explicitly as NAT PMP/UPnP.
+
+This does not seem to be part of the BitTorrent protocol, but rather an extra client feature.
+
+[[libtorrent-rasterbar|libtorrent]] provides this feature through:
+
+```bash
+enum portmap_transport
+enum portmap_protocol
+```
+
+The first one allows to choose between `natpmp` or `upnp`, while the second between `tcp/udp`. 
+
+I do not believe we implement support for that in our client. Do we?
 
 ### uTorrent transport protocol (uTP)
 
