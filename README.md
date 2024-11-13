@@ -14,7 +14,7 @@ source: https://github.com/marcinczenko/bittorrent-codex-docs
 
 In this repository your will find a complete documentation of our BitTorrent/Codex investigation.
 
-## How to read that document
+## How to read this document
 
 The most important part to read are the 3 points at the beginning of the [Objectives](#objectives) section below followed by a introductory [[Is it all worth it?]]. I tried to keep that part concise yet informative.
 

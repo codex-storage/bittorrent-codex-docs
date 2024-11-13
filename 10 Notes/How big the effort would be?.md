@@ -12,7 +12,7 @@ Depending on the scope. Let's recall the most significant extensions we may need
 - Bandwidth incentives.
 - PEX,
 - LSD (Local Service Discovery),
-- NAT PMP/UPn{P,
+- NAT PMP/UPnP,
 - uTP,
 - Superseeding.
 
