@@ -5,4 +5,4 @@ Some remarks/questions to consider.
 3. BitTorrent has a bit dark history. Also past occurrences where malware or mining software ended up on users computers. Current ad-based marketing model also makes impression that the community is maybe in worse condition than usage numbers try to cover.
 4. What is the future of BitTorrent. Is the technology on its decay, or do we want to believe it is actually coming back to live (I was not really able to answer that question myself).
 
-In the end we also need to ask what are the benefits for the BitTorrent user when enabling Codex/Marketplace integration. This is mostly the durability of the data and opportunity for storage providers to monetise, which contrasting with BitTorrent's best-effort usage.
+In the end we also need to ask what are the benefits for the BitTorrent user when enabling Codex/Marketplace integration. This is mostly the durability of the data and opportunity for storage providers to monetise, which is contrasting with BitTorrent's best-effort usage.
