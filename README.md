@@ -3,11 +3,11 @@ tags:
   - bittorrent
   - obsidian
   - notion
-source: https://github.com/marcinczenko/bittorrent-codex-docs
+source: https://github.com/codex-storage/bittorrent-codex-docs
 ---
 #bittorrent #obsidian #notion 
 
-| source | https://github.com/marcinczenko/bittorrent-codex-docs |
+| source | https://github.com/codex-storage/bittorrent-codex-docs |
 | ------ | ----------------------------------------------------- |
 
 ## BitTorrent/Codex Integration
