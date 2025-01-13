@@ -1,19 +1,19 @@
 ---
 tags:
   - bittorrent
-link: http://bittorrent.org/beps/bep_0052.html
+link: https://www.bittorrent.org/beps/bep_0052.html
 related-to:
   - "[[Learn BitTorrent]]"
   - "[[libtorrent-rasterbar]]"
 ---
 #bittorrent 
 
-| link       | http://bittorrent.org/beps/bep_0052.html       |
+| link       | https://www.bittorrent.org/beps/bep_0052.html       |
 | ---------- | ---------------------------------------------- |
 | related-to | [[Learn BitTorrent]], [[libtorrent-rasterbar]] |
 
 
-Dated 10-Jan-2008, [BEP52](http://bittorrent.org/beps/bep_0052.html) describes `v2` of the BitTorrent protocol. Below I attempt to enumerate the most important changes.
+Dated 10-Jan-2008, [BEP52](https://www.bittorrent.org/beps/bep_0052.html) describes `v2` of the BitTorrent protocol. Below I attempt to enumerate the most important changes.
 
 > I am not trying to be exhaustive, not very precise here, as we will basically focus on the version 2 of the protocol. If we want to support `v1` we will learn it better while working on it.
 
@@ -21,7 +21,7 @@ Dated 10-Jan-2008, [BEP52](http://bittorrent.org/beps/bep_0052.html) describes `
 
 ### Question 1
 
-Ok, let’s now switch to BitTorrent v2 (BEP52: http://bittorrent.org/beps/bep_0052.html).
+Ok, let’s now switch to BitTorrent v2 (BEP52: https://www.bittorrent.org/beps/bep_0052.html).
 
 Can you summarise the differences between BitTorrent protocol version 2 (BEP52) and version 1 (BEP3)?
 #### Answer

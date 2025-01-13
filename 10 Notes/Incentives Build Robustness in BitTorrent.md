@@ -3,7 +3,7 @@ tags:
   - paper
 authors:
   - Bram Cohen
-link: http://bittorrent.org/bittorrentecon.pdf
+link: https://www.bittorrent.org/bittorrentecon.pdf
 related-to:
   - "[[Learn BitTorrent]]"
 ---
@@ -11,7 +11,7 @@ related-to:
 
 | authors    | Bram Cohen                               |
 | ---------- | ---------------------------------------- |
-| link       | http://bittorrent.org/bittorrentecon.pdf |
+| link       | https://www.bittorrent.org/bittorrentecon.pdf |
 | related-to | [[Learn BitTorrent]]                     |
 
 Original "BitTorrent" paper by [[Bram Cohen]].

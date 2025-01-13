@@ -17,16 +17,16 @@ In order to imagine, what do we mean by *BitTorrent - Codex Integration*, we nee
 
 ### Specs
 
-BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Proposals (BEPs)](http://bittorrent.org/beps/bep_0000.html). Each BEP adds something to the BitTorrent Protocol. The most important BEPs to study in order to get a good initial grip on the BitTorrent protocol are:
+BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Proposals (BEPs)](https://www.bittorrent.org/beps/bep_0000.html). Each BEP adds something to the BitTorrent Protocol. The most important BEPs to study in order to get a good initial grip on the BitTorrent protocol are:
 
 - [[BEP3 - The BitTorrent Protocol Specification]]
 - [[BEP52 - The BitTorrent Protocol Specification v2]]
 - [[BEP5 - DHT Protocol]]
-- [BEP9 - Extension for Peers to Send Metadata Files](https://bittorrent.org/beps/bep_0009.html)
-- [BEP10 -Extension Protocol](https://bittorrent.org/beps/bep_0010.html), see also [extension protocol for BitTorrent](https://www.rasterbar.com/products/libtorrent/extension_protocol.html)
-- [BEP11 - Peer Exchange (PEX)](https://bittorrent.org/beps/bep_0011.html)
-- [BEP23 - Tracker Returns Compact Peer Lists](https://bittorrent.org/beps/bep_0023.html)
-- [BEP29 - uTorrent transport protocol](https://bittorrent.org/beps/bep_0029.html)
+- [BEP9 - Extension for Peers to Send Metadata Files](https://www.bittorrent.org/beps/bep_0009.html)
+- [BEP10 -Extension Protocol](https://www.bittorrent.org/beps/bep_0010.html), see also [extension protocol for BitTorrent](https://www.rasterbar.com/products/libtorrent/extension_protocol.html)
+- [BEP11 - Peer Exchange (PEX)](https://www.bittorrent.org/beps/bep_0011.html)
+- [BEP23 - Tracker Returns Compact Peer Lists](https://www.bittorrent.org/beps/bep_0023.html)
+- [BEP29 - uTorrent transport protocol](https://www.bittorrent.org/beps/bep_0029.html)
 
 ### libtorrent
 

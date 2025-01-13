@@ -9,7 +9,7 @@ related-to:
 | related-to | [[Protocol v1 clarifications]], [[BitTorrent DHT clarifications]] |
 | ---------- | ----------------------------------------------------------------- |
 
-[BEP3](http://bittorrent.org/beps/bep_0003.html) describes the original, or `v1` of the BitTorrent protocol.
+[BEP3](https://www.bittorrent.org/beps/bep_0003.html) describes the original, or `v1` of the BitTorrent protocol.
 
 ### ChatGPT clarifications
 

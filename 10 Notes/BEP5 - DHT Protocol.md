@@ -2,7 +2,7 @@
 tags:
   - bittorrent
   - dht
-link: http://bittorrent.org/beps/bep_0005.html
+link: https://www.bittorrent.org/beps/bep_0005.html
 related-to:
   - "[[BitTorrent DHT clarifications]]"
   - "[[Learn BitTorrent]]"
@@ -10,7 +10,7 @@ related-to:
 ---
 #bittorrent #dht 
 
-| link       | http://bittorrent.org/beps/bep_0005.html                                                |
+| link       | https://www.bittorrent.org/beps/bep_0005.html                                                |
 | ---------- | --------------------------------------------------------------------------------------- |
 | related-to | [[BitTorrent DHT clarifications]], [[Learn BitTorrent]], [[Protocol v1 clarifications]] |
 
