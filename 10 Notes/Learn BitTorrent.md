@@ -13,7 +13,7 @@ related-to:
 | ---------- | ------------------------------------------------------ |
 | relates-to | [[Comparison of BitTorrent clients]]                   |
 
-In order to imagine, what do we mean by *BitTorrent - Codex Integration*, we need to gain some basic understanding of BitTorrent. This is no time nor space to create a comprehensive introduction to BitTorrent here (we need to learn it as we go), so, here I just gathered some resources I use to understand the protocol, and by doing it to understand what does it mean for Codex to integrate with BitTorrent clients.
+To envision what the *BitTorrent - Codex Integration* may look like, we need to gain some basic understanding of BitTorrent. This is no time nor space to create a comprehensive introduction to BitTorrent here (we need to learn it as we go), so, here I just gathered some resources I use to understand the protocol, and by doing it to understand what does it mean for Codex to integrate with BitTorrent clients.
 
 ### Specs
 
@@ -22,8 +22,8 @@ BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Pr
 - [[BEP3 - The BitTorrent Protocol Specification]]
 - [[BEP52 - The BitTorrent Protocol Specification v2]]
 - [[BEP5 - DHT Protocol]]
-- [BEP9 - Extension for Peers to Send Metadata Files](https://www.bittorrent.org/beps/bep_0009.html)
-- [BEP10 -Extension Protocol](https://www.bittorrent.org/beps/bep_0010.html), see also [extension protocol for BitTorrent](https://www.rasterbar.com/products/libtorrent/extension_protocol.html)
+- [[BEP9 - Extension for Peers to Send Metadata Files]]
+- [[BEP10 Extension Protocol]]
 - [BEP11 - Peer Exchange (PEX)](https://www.bittorrent.org/beps/bep_0011.html)
 - [BEP23 - Tracker Returns Compact Peer Lists](https://www.bittorrent.org/beps/bep_0023.html)
 - [BEP29 - uTorrent transport protocol](https://www.bittorrent.org/beps/bep_0029.html)
@@ -32,7 +32,7 @@ BitTorrent spec is build incrementally from so called [BitTorrent Enhancement Pr
 
 [[libtorrent-rasterbar|libtorrent]] is also an excellent source of information about the protocol and it will be the main source of learning the APIs and potential integration points.
 
-> The further you go the more you realise that libtorrent **is** probably the best source of information about the BitTorrent protocol. Perhaps one can even say that most of the protocol developments in the are of BitTorrent happens in libtorrent. Simply speaking, libtorrent is BitTorrent.
+> The further you go the more you realise that libtorrent **is** probably the best source of information about the BitTorrent protocol. Perhaps one can even say that most of the protocol developments in the area of BitTorrent happens in libtorrent. Simply speaking, libtorrent is BitTorrent.
 
 ### Papers
 
@@ -52,3 +52,5 @@ Below some recommendations:
 ### BitTorrent Token
 
 Not sure how to categorise this, especially it is just in the area of the BitTorrent ambitions. Yet, clearly, they want to be on the same market as we are: [Whitepaper](https://www.bittorrent.com/btt/btt-docs/BitTorrent_(BTT)_White_Paper_v0.8.7_Feb_2019.pdf).
+
+See also [[Other BitTorrent References]].

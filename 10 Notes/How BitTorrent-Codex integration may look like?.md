@@ -58,7 +58,11 @@ In the [libtorrent tutorial](https://www.libtorrent.org/tutorial-ref.html) we ca
 
 ### Integrating Codex and BitTorrent
 
-Despite the conceptual similarities between Codex and BitTorrent, trying to perform some surgical cuts in the Codex protocol to make it able to talk to other BitTorrent clients does not seem to be the best way. The most intuitive approach seems to be providing a library with a similar interface as [[libtorrent-rasterbar|libtorrent]] (at least for the clients that depend on it), yet using Codex under the hood. Doing this alone, however, will allow the involved clients to interoperate only if all of them selected "Codex Durability Engine" in the settings instead of using the default BitTorrent protocol. What if a client using the default BitTorrent protocol wants to join a swarm with nodes using Codex protocol?
+Ideally we want to [[Advertising BitTorrent content on Codex|advertise BitTorrent content directly on Codex network]].
+
+#### Discussion and alternative integration options
+
+Despite the conceptual similarities between Codex and BitTorrent, trying to perform some surgical cuts in the Codex protocol to make it able to talk to other BitTorrent clients does not seem to be the best way. The protocols are different, the DHTs are different, the manifests are different. Conceptually, of course, a lot of similarities, yet, the differences make the two worlds impenetrable to each other. How then the content from BitTorrent will move over to Codex?
 
 ![[Code-BitTorrent interoperability.svg]]
 
@@ -68,15 +72,15 @@ The most logical (so it seems) approach will be to expect that the user will eit
 1. use two separate clients: one for regular BitTorrent downloads, and one for the clients using Codex under the hood. E.g. the users can use regular BitTorrent clients to do best-effort download of the content they are interested in, and then use Codex for more reliable, durable storage options. If we can, with Codex, achieve better performance and stability than BitTorrent, we can gradually see users transitioning to a more reliable protocol.
 2. use one client with integrated Codex as an optional setting/plugin. This way, the regular BotTorrent Swarms will be handled with the standard BitTorrent protocol, while, if enabled, at the same time we will be seeding and download the content from the clients having Codex protocol available. Further extending the client with the Marketplace support, we can not only provide durability, but also handle other scenarios like backups, or high-volume storage.
 
-Option (2) seems to be more pragmatic and moreover it makes us more independent from the details of the [[libtorrent-rasterbar|libtorrent]] API (or any other BitTorrent library out there). The following drawing shows three how we could bridge the the two communities: 
+The disadvantage of Option (1) is that the users of the regular BitTorrent clients are not exposed to the Codex network at all. They need to be aware that there is something like Codex and have some incentives to download the Codex client - basically, we would still need to reach out to BitTorrent users and somehow trigger their interest in Codex - so, the same situation we have right now without doing anything with BitTorrent. Option (2), on the other hand, assumes we can intercept/enter the standard distribution channels for the selected BitTorrent client. The users would experience Codex as a simple update where a new release would come with Codex-specific features. This new Codex client needs to provide a bridge between two worlds as illustrated on the following picture: 
 
 ![[Code-BitTorrent interoperability-3.svg]]
 
-The nodes in the middle take care for making the content discoverable on both protocols, while the node on the edges are operating using native protocols.
+On the picture, the clients in the middle are dual-clients taking care for making the content discoverable on both protocols (remembering we are more interested in bringing the content from BitTorrent to Codex, and less the other way around, especially, there is no so much content on the Codex side at the moment), while the clients on the edges are regular BitTorrent and Codex clients that only support native protocols.
 
 Two DHTs thus. This duplication allows us to keep the original protocols intact. Mostly: we still have to look at things that BitTorrent *has* and we Codex *doesn't* and what other BitTorrent protocol extensions may have serious impact on the relative performance.
 
-Can we use one DHT. No. Unless we want to switch the whole exchange protocol to the one of BitTorrent - and we should have ambition to perform better than BitTorrent.
+Can we use one DHT? No. Unless we want to switch the whole exchange protocol to the one of BitTorrent - and we should have ambition to perform better than BitTorrent.
 
 But imagine, we want to "hot-swap" the BitTorrent protocol with Codex in such a way that the original client (UI/CLI) remains unchanged, supporting all the original BitTorrent options. I fail to find a clear advantage of such approach, especially that it does not seem to improve intra-operability: original BitTorrent clients will still not be able to talk to the *Codexified* BitTorrent clients - their exchange protocols, and their DHTs will be different.
 

@@ -9,7 +9,9 @@ related-to:
 | related-to | [[Protocol v1 clarifications]], [[BitTorrent DHT clarifications]] |
 | ---------- | ----------------------------------------------------------------- |
 
-[BEP3](https://www.bittorrent.org/beps/bep_0003.html) describes the original, or `v1` of the BitTorrent protocol.
+[BEP3](http://bittorrent.org/beps/bep_0003.html) describes the original, or `v1` of the BitTorrent protocol.
+
+> Notice that most of the BEP links are `https` and start with `www`. But not all and BEP3 is one of them.
 
 ### ChatGPT clarifications
 
@@ -281,7 +283,7 @@ Imagine Peer A and Peer B connecting to share a file in the torrent:
 
 	- Periodic Keep-Alive:
 
-	- If there is a lull in communication, Peer A and Peer B may exchange keep-alive messages to ensure the connection stays active.
+		- If there is a lull in communication, Peer A and Peer B may exchange keep-alive messages to ensure the connection stays active.
 
 This cycle of requesting, receiving, and sharing updates continues until Peer A has downloaded all the necessary pieces of the file from Peer B and potentially other peers in the swarm.
 

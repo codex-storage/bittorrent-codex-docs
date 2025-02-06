@@ -21,7 +21,7 @@ Dated 10-Jan-2008, [BEP52](https://www.bittorrent.org/beps/bep_0052.html) descri
 
 ### Question 1
 
-Ok, let’s now switch to BitTorrent v2 (BEP52: https://www.bittorrent.org/beps/bep_0052.html).
+Ok, let’s now switch to BitTorrent v2 (BEP52: http://bittorrent.org/beps/bep_0052.html).
 
 Can you summarise the differences between BitTorrent protocol version 2 (BEP52) and version 1 (BEP3)?
 #### Answer
