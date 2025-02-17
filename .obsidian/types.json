@@ -8,6 +8,7 @@
     "finished": "checkbox",
     "finished-date": "text",
     "related-to": "multitext",
-    "authors": "multitext"
+    "authors": "multitext",
+    "related": "multitext"
   }
 }

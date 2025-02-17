@@ -46,7 +46,7 @@ openssl sha1 experiment-3/data40k.bin
 SHA1(experiment-3/data40k.bin)= 1cc46da027e7ff6f1970a2e58880dbc6a08992a0
 ```
 
-The info, sha1 hash of the `info` dictionary is: `1902d602db8c350f4f6d809ed01eff32f030da95`.
+The `info` hash (sha1) of the bencoded `info` dictionary is: `1902d602db8c350f4f6d809ed01eff32f030da95`.
 
 Now, let's assume our input is a magnet link corresponding to the above torrent file:
 
@@ -315,3 +315,7 @@ From the above analysis, we see that for Codex protocol to be able to directly h
 3. We already use Merkle inclusion proofs, so we have great deal of flexibility of how we want to support torrents version 2. The `info` dictionary already provides us with the original file roots via `pieces root`, so we basically have to make sure we can provide the relevant intermediate layers aligned to the piece length (which basically means the leaves of our Merkle trees need to be computed over the chunks of the same size as in BitTorrent - `16 kiB`) and the `pieces root` will be built on top of that. Moreover, having inclusion proofs in place we should be able to improve version 1 torrents as well. With original pieces hashes coming from the `info` dictionary, we can secure authenticity of the content, and with Codex inclusion proofs we can enhance torrents version 1 with early validation.
 
 More detailed discussion will follow after learning more low level details of the Codex client.
+
+### Followup
+
+[[Uploading and downloading content in Codex]] is were we document the contant upload and download in the Codex client.
