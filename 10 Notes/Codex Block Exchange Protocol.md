@@ -353,3 +353,4 @@ proc resolveBlocks*(b: BlockExcEngine, blocksDelivery: seq[BlockDelivery]) {.asy
   await b.cancelBlocks(blocksDelivery.mapIt(it.address))
 ```
 
+This is important moment, as from *receiving* mode, we are changing to *sending* mode: we just received a number of blocks via `blockDelivery` and we will now announce possession of those blocks to other peers that may *want* them.

@@ -4,11 +4,14 @@ tags:
 related-to:
   - "[[How BitTorrent-Codex integration may look like?]]"
   - "[[Learn BitTorrent]]"
+related:
+  - "[[Uploading and downloading content in Codex]]"
 ---
 #bittorrent 
 
 | related-to | [[How BitTorrent-Codex integration may look like?]], [[Learn BitTorrent]] |
 | ---------- | ------------------------------------------------------------------------- |
+| related    | [[Uploading and downloading content in Codex]]                            |
 
 This content builds upon [[BitTorrent metadata files]]
 
