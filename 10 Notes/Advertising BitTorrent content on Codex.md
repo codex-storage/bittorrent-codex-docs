@@ -57,7 +57,7 @@ Now, let's assume our input is a magnet link corresponding to the above torrent 
 magnet:?xt=urn:btih:1902d602db8c350f4f6d809ed01eff32f030da95&dn=data40k.bin
 ```
 
-The magnet link itself does not tell us details of the corresponding torrent file: what we have is only the hash of the bencoded `info` directory. How does the peer interested in downloading the content designated by the given magnet link finds the remaining details of the `info` dictionary? This is defined in [[BEP9 - Extension for Peers to Send Metadata Files]].
+The magnet link itself does not tell us details of the corresponding torrent file: what we have is only the hash of the b-encoded `info` directory. How does the peer interested in downloading the content designated by the given magnet link finds the remaining details of the `info` dictionary? This is defined in [[BEP9 - Extension for Peers to Send Metadata Files]].
 
 > [!note]
 > BEP9 is also where the magnet links were introduced.
@@ -314,7 +314,7 @@ Later I will provide some examples of those messages, but here it is enough to s
 From the above analysis, we see that for Codex protocol to be able to directly host BitTorrent content, we need the following extensions:
 
 1. Peers need to advertise their corresponding SPRs under both `info` hash versions 1 and 2, so that they can be discovered.
-2. To handle BitTorrent version 1 traffic, it is sufficient to support [[BEP9 - Extension for Peers to Send Metadata Files]].
+2. To handle BitTorrent version 1 traffic, Codex peers need to be able to discover and download torrent metadata corresponding to the given `info` hash - in trackerless torrents, where the only input might be a magnet link containing only torrent's `info` hash, BitTorrent uses  [[BEP9 - Extension for Peers to Send Metadata Files]]. In Codex, we will use [[BitTorrent Manifest]] to achieve the same. Read more: [[Implementing Codex BitTorrent extension]].
 3. We already use Merkle inclusion proofs, so we have great deal of flexibility of how we want to support torrents version 2. The `info` dictionary already provides us with the original file roots via `pieces root`, so we basically have to make sure we can provide the relevant intermediate layers aligned to the piece length (which basically means the leaves of our Merkle trees need to be computed over the chunks of the same size as in BitTorrent - `16 kiB`) and the `pieces root` will be built on top of that. Moreover, having inclusion proofs in place we should be able to improve version 1 torrents as well. With original pieces hashes coming from the `info` dictionary, we can secure authenticity of the content, and with Codex inclusion proofs we can enhance torrents version 1 with early validation.
 
 More detailed discussion will follow after learning more low level details of the Codex client.
@@ -322,3 +322,4 @@ More detailed discussion will follow after learning more low level details of th
 ### Followup
 
 [[Uploading and downloading content in Codex]] is were we document the contant upload and download in the Codex client.
+
