@@ -1,0 +1,1 @@
+We had a session about Codex-BitTorrent integration. The recording can be found [here](https://youtu.be/lChnESwoPoE?si=2AXJR2oOPL2aORzu) and the Excalidraw slides [here](https://link.excalidraw.com/readonly/HqZiN6H2q3eqI0YYPuUh)

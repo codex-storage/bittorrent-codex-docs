@@ -3,6 +3,10 @@
 | related | [[Codex Blocks]], [[Block Storage]], [[Codex Block Exchange Protocol]] |
 | ------- | ---------------------------------------------------------------------- |
 
+For a high level overview of how Codex works, you can check the [[Codex-BitTorrent Integration presentation]] slides.
+
+To have a more detailed overview of the block exchange architecture, please refer to [Codex Block Exchange Architecture](https://link.excalidraw.com/readonly/L0Rz0LU3oUBDjpHh9rIp).
+
 We upload the content with API `/api/codex/v1/data`. The handler defined in `codex/rest/api.nim` calls `CodexNodeRef.store` and then returns the `Cid` of the manifest file corresponding to the contents:
 
 ```nim
