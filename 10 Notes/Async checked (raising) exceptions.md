@@ -531,7 +531,7 @@ echo waitFor waitHandle(handle)
 ```
 
 > [!info]
-> In the examples I am using our macro - just for fun, and it is also shorter to type than `Future[...].Raising(...).init()`
+> In the examples I am using our macro - just as an example, and it is also shorter to type than `Future[...].Raising(...).init()`
 
 The compilation will fail with the following error:
 
