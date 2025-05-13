@@ -37,9 +37,11 @@ Getting there in short time is not easy, especially without recent hands-on expe
 
 ### Obsidian
 
-This repository is also a complete [Obsidian](https://obsidian.md) vault. You can open it on your computer in the [Obsidian App](https://obsidian.md/download) and have a complete snapshot of everything I have captured when working on the subject. Comparing to bloated [Notion](https://www.notion.so), which is a great tool for procrastination rather than a tool for capturing knowledge, Obsidian let's you capture the knowledge quickly and with excellent overview of how different topic connect to each other. And in the end - all are just Markdown files.
+This repository is a complete [Obsidian](https://obsidian.md) vault. You can open it on your computer in the [Obsidian App](https://obsidian.md/download) and have a complete snapshot of everything I have captured when working on the subject. Comparing to bloated [Notion](https://www.notion.so), which is a great tool for procrastination rather than a tool for capturing knowledge, Obsidian let's you capture the knowledge quickly and with excellent overview of how different topic connect to each other. And in the end - all are just Markdown files.
 
 The vault includes the `.obsidian` folder, but does not include publishing settings, and workspace configuration as those are personal and change every time you open the vault. If you want to have the full control over your Obsidian look and full, your own [[Hot-Keys|hot-keys]], [[Installed plugins|plugins]], etc, your can delete `.obsidian` or replace it with your own.
+
+To learn more about Obsidian and *Knowledge Management Systems*, please also check [[Short Introduction to Obsidian]].
 
 ### Published site
 
