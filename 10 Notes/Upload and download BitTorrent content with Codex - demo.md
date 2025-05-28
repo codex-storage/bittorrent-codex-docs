@@ -11,10 +11,10 @@ task codex, "build codex binary":
 
 In the example session, we will use two nodes:
 
-- node-1 will be where we will upload (seed) the content
-- node-2 will be from where we will be downloading the previously uploaded content.
+- `node-1` will be where we will upload (seed) the content
+- `node-2` will be from where we will be downloading the previously uploaded content.
 
-Start node-1:
+Start `node-1`:
 
 ```bash
 ./build/codex --data-dir=./data-1 --listen-addrs=/ip4/127.0.0.1/tcp/8081 --api-port=8001 --nat=none --disc-port=8091 --log-level=TRACE
@@ -27,7 +27,7 @@ Generate fresh content:
 dd if=/dev/urandom of=./data10M.bin bs=10M count=1
 ```
 
-Upload content to node-1:
+Upload content to `node-1`:
 
 ```bash
 curl -X POST \
@@ -45,15 +45,21 @@ Set `info_hash` env var:
 export INFO_HASH=11144249FFB943675890CF09342629CD3782D107B709
 ```
 
-Start node-2:
+Or if you want to use a magnet file, create a (text) file (e.g. `magnet-v1-test.txt`) and make sure you include your INFO hash it. The response returned after uploading the content is a multihash. To get a regular hash, you just have to skip the first 4 characters:
+
+```
+magnet:?xt=urn:btih:4249FFB943675890CF09342629CD3782D107B709
+```
+
+Start `node-2`:
 
 ```bash
 ./build/codex --data-dir=./data-2 --listen-addrs=/ip4/127.0.0.1/tcp/8082 --api-port=8002 --nat=none --disc-port=8092 --log-level=TRACE
 ```
 
-Make sure that node-1 and node-2 are connect (should be automatic but sometimes we need to trigger it when running on localhost without nat).
+Now, let's make sure that `node-1` and `node-2` are connected.
 
-Get the peerId from node-1
+Get the peerId from `node-1`
 
 ```bash
 curl -H 'Accept: text/plain' 'http://localhost:8001/api/codex/v1/peerid' --write-out '\n'
@@ -66,7 +72,7 @@ Here it is also good to use env var:
 export PEERID_NODE1=$(curl -H 'Accept: text/plain' 'http://localhost:8001/api/codex/v1/peerid')
 ```
 
-Connect node-2 to node-1:
+Connect `node-2` to `node-1`:
 
 ```bash
 curl "http://localhost:8002/api/codex/v1/connect/${PEERID_NODE1}?addrs=/ip4/127.0.0.1/tcp/8081"
@@ -79,10 +85,33 @@ Make sure `INFO_HASH` env var is set:
 export INFO_HASH=11144249FFB943675890CF09342629CD3782D107B709
 ```
 
-Stream the content from node-2:
+Stream the content from `node-2` using `INFO_HASH` directly use: 
 
 ```bash
 curl "http://localhost:8002/api/codex/v1/torrent/${INFO_HASH}/network/stream" -o "${INFO_HASH}.bin"
+```
+
+and to stream the content from `node-2` using the magnet link, use:
+
+```bash
+curl -X POST \
+  http://localhost:8001/api/codex/v1/torrent/magnet \
+  -H 'Content-Type: text/plain' \
+  -w '\n' \
+  -T magnet-v1-test.txt \
+  -o magnet-v1-content.bin
+```
+(you can change the name under which the downloaded content will be saved, here it is `magnet-v1-content.bin`).
+
+To use magnet links, you do not have to create a file. You can just directly paste the magnet link text as follows:
+
+```bash
+curl -X POST \
+  http://localhost:8001/api/codex/v1/torrent/magnet \
+  -H 'Content-Type: text/plain' \
+  -w '\n' \
+  -d 'magnet:?xt=urn:btih:4249FFB943675890CF09342629CD3782D107B709' \
+  -o magnet-v1-content.bin
 ```
 
 And to get just the torrent manifest:
@@ -147,7 +176,10 @@ curl "http://localhost:8002/api/codex/v1/torrent/${INFO_HASH}/network/manifest" 
 }
 ```
 
-And here is the streaming log (node-2) for the reference:
+You can also use a torrent file when downloading the content from the Codex network. Please check [[Using Torrent Files to Download Content from the Codex Network]].
+### Appendix
+
+The streaming log (node-2) for the reference:
 
 ```bash
 TRC 2025-03-20 03:32:28.939+01:00 torrent requested:                         topics="codex restapi" tid=6977524 multihash=sha1/04010165844CF71179B42AC3C0462E31EB9E74B1
